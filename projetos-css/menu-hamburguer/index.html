@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Hamburguer</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <header class="container">
-        <nav class="nav-bar">
+        <nav class="navbar">
             <div class="logo">
-
+                logo
             </div>
-            <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Home</a></li>
+            <button type="button" id="btn-mobile" aria-controls="menu" aria-haspopup="true" aria-label="Abrir Menu" aria-expanded="false">
+                <span class="burger"></span>
+                <span class="burger"></span>
+                <span class="burger"></span>
+            </button>
+            <ul rule="menu" class="menu" id="menu">
+                <li><a href="#" translate="no">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
+
+    <script src="scripts/script.js"></script>
 </body>
 </html>
