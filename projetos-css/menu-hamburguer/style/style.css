@@ -9,8 +9,8 @@
 }
 
 :root {
-    --font-default: 400 1rem 'Fira Sans', sans-serif;
-    --font-title: 500 2rem 'Fira Sans', sans-serif;
+    --default-font: 400 1rem 'Fira Sans', sans-serif;
+    --title-font: 500 2rem 'Fira Sans', sans-serif;
 
     --color1: #32D9BA; 
     --color2: #2EA690; 
@@ -21,7 +21,7 @@
 
 body {
     min-height: 100vh;
-    font: var(--font-default);
+    font: var(--default-font);
     background: var(--color3);
 }
 
@@ -30,7 +30,7 @@ body {
     width: 100%;
     padding: 0px 5px;
     background: var(--color2);
-    font: var(--font-title);
+    font: var(--title-font);
     font-size: 1rem;
     text-transform: uppercase;
     display: flex;
@@ -48,7 +48,6 @@ body {
 
 .logo {
     color: var(--color4);
-    cursor: pointer;
 }
 
 .navbar .menu {
