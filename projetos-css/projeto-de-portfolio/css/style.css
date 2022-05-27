@@ -12,7 +12,7 @@
     --default-font:  400 1rem 'Raleway', sans-serif;
     --title-font: 500 2rem 'Raleway', sans-serif;  
     
-    --light-blue: #4d97a8;
+    --light-blue: #368799;
     --dark-blue: #023d55;
     --black: #171717; 
 }
@@ -360,6 +360,69 @@ ion-icon {
     transform: translate3d(0px, 0px, 0px);
 }
 
+#contact{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #f7f6f6;
+}
+
+.form-container {
+    font: var(--title-font);
+    width: 40%;
+    height: 450px;
+    max-height: auto;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    background: var(--light-blue);
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f7f6f6;
+}
+
+.form-container form {
+    font: var(--default-font);
+    color: #f7f6f6;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+form button {
+    display: block;
+    font: var(--default-font);
+    font-weight: 600;
+    color: #f7f6f6;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    background: var(--dark-blue);
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: .3s ease-in;
+}
+
+form button:hover {
+    letter-spacing: 2px;
+    background: #0f5a77;
+}
+
+form input{
+    font: inherit;
+    font-size: 1rem;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: none;
+}
+
 footer {
     height: 50px;
     width: 100%;
@@ -400,6 +463,15 @@ footer {
     }
     .card{
         height: 300px;
+    }
+
+    #contact {
+        flex-direction: column;
+    }
+
+    .form-container {
+        width: 100%;
+        border-radius: 0px;
     }
 
 }
