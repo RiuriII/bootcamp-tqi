@@ -21,8 +21,17 @@ for (const option of menuOptions) {
         nav.classList.remove('open')
     });
 }
+
 btnMenu.addEventListener('touchstart', toggleMenu)
 btnMenu.addEventListener('click', toggleMenu)
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY >= 500) {
+        nav.classList.add('change-color')
+    } else {
+        nav.classList.remove('change-color')
+    }
+})
 
 // animação de scroll
 const debounce = function(func, wait, immediate) {
@@ -44,7 +53,7 @@ const target = document.querySelectorAll('[data-anime]')
 const classAdd = 'animate'
 
 function animateScroll() {
-    const windowTop = window.pageYOffset * 1.55
+    const windowTop = window.pageYOffset * 1.4
 
     target.forEach( function(element) {
         if(windowTop > element.offsetTop) {

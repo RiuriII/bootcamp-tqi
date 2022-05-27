@@ -8,12 +8,10 @@
     box-sizing: border-box;
 }
 
-html:root {
+:root {
     --default-font:  400 1rem 'Raleway', sans-serif;
     --title-font: 500 2rem 'Raleway', sans-serif;  
     
-    --light-orange: #f07832; 
-    --dark-orange: #f06414; 
     --light-blue: #4d97a8;
     --dark-blue: #023d55;
     --black: #171717; 
@@ -26,7 +24,6 @@ html:root {
     flex-direction: column;
     align-items: center;
     background-image: linear-gradient(130deg, #023555 11%, #024864 32%, #025e73 66%, #fc8637 90%, #f48e50 100%);
-    /*background-image: linear-gradient(130deg, #023555 5%, #024864 10%, #025E73 46%, #025E73 66%, #fc8637 90%, #f48e50 100%);*/
     background-size: 400% 400%;
     animation: bgTransition 8s ease-in-out infinite;
 }
@@ -34,7 +31,6 @@ html:root {
 .navbar {
     min-height: 50px;
     width: 100%;
-    padding: 0px 5px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -113,7 +109,8 @@ html:root {
     color: var(--dark-blue);
 }
 
-.navbar.open .trace {
+.navbar.change-color .btn-menu .trace,
+.navbar.open .btn-menu .trace {
     background: var(--dark-blue);
 }
 
@@ -215,21 +212,27 @@ ion-icon {
 }
 
 .main-container {
-    width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     margin-top: 1rem;
+}
+
+.parallax {
+    height: 60vh;
+    width: 100%;
+    background: url('../img/parallax-img.jpg') no-repeat fixed center;
+    background-size: cover;
 }
 
 #projects {
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .card-container {
@@ -238,6 +241,7 @@ ion-icon {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    overflow: hidden;
     padding: 1rem;
 }
 
@@ -257,10 +261,80 @@ ion-icon {
     margin: 3rem 0 0;
     background: url('../img/cup.jpg') no-repeat center;
     background-size: cover;
+    filter: grayscale(.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #f7f6f6;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.card-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    gap: .5rem;
+}
+
+.card-wrapper h1 {
+    letter-spacing: 2px;
+    margin: 0;
+    font-weight: 400;
+    transition: .3s;
+}
+
+.card-wrapper p{
+    font-weight: 400;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+.card-wrapper::before {
+    content: '';
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    display: block;
+    border: 1px solid #f7f6f6;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+.card:hover .card-wrapper::before{
+    height: 250px;
+    width: 200px;
+    opacity: 1;
+}
+
+.card:hover .card-wrapper p{
+    opacity: 1;
+}
+
+.card:hover {
+    filter: unset;
+}
+
+#about {
+    margin-top: 4rem;
+    width: 100%;
+    min-height: 100vh;
+    max-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img img{
+    width: 100%;
+}
+
+#about .card-text{
+   font-weight: 500;
 }
 
 [data-anime] {
@@ -286,6 +360,16 @@ ion-icon {
     transform: translate3d(0px, 0px, 0px);
 }
 
+footer {
+    height: 50px;
+    width: 100%;
+    font: var(--title-font);
+    font-size: 1rem;
+    background: var(--dark-blue);
+    color: #f7f6f6;
+    display: grid;
+    place-items: center;
+}
 
 @keyframes bgTransition {
     0%{
@@ -299,3 +383,23 @@ ion-icon {
     }
 }
 
+@media (max-width: 650px ) {
+    #projects {
+        gap: 2rem;
+    }
+    .card-container {
+        flex-direction: column-reverse;
+        gap: 2rem;
+    }
+
+    .card-container:nth-child(2) {
+        flex-direction: column;
+    }
+    .card-text {
+        width: 100%;
+    }
+    .card{
+        height: 300px;
+    }
+
+}
