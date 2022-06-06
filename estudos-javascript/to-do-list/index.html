@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do list</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>To-Do sua lista de afazeres</h2>
+        <div class="addTask-wrapper">
+            <input type="text" name="addTask" id="addTask" placeholder="Adicione uma nova tarefa...">
+            <button type="button" id="btnAddTask">+</button>
+        </div>
+        <ul class="listTasks">
+
+        </ul>
+        <footer>
+            <p>total de tarefas <span id="task-counter">0</span></p>
+            <button type="button" id="btn-remove">Remover<ion-icon name="trash-outline"></ion-icon></button>
+        </footer>
+    </div>
+
+    <script src="assets/scripts/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
